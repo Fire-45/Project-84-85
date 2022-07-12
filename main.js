@@ -1,5 +1,6 @@
 canvas = document.getElementById("myCanvas");
 ctx = canvas.getContext("2d");
+window.alert("Control the two cars using the keys WASD and the arrow keys")
 
 car1_width = 120; // These are for car 1
 car1_height = 70;
@@ -30,7 +31,7 @@ car2_imgTag.src = car2_img;
 }
 
 function uploadBackground(){
-     ctx.drawImage(background_imgTag,0,0,cavas.width,canvas.height);
+     ctx.drawImage(background_imgTag,0,0,canvas.width,canvas.height);
 }
 
 function uploadCar1(){
@@ -49,6 +50,16 @@ function my_keydown(e){
 
      keyPressed = e.keyCode;
      console.log(keyPressed);
+
+     if(car1_x >700){
+          document.getElementById("gamingStatus").innerHTML = "Car 1 won!!!!!!";
+          document.getElementById("myCanvas").style.borderColor.red;
+     }
+
+     if(car2_x > 700){
+          document.getElementById("gamingStatus").innerHTML = "Car 2 won!!!!!!!!!";
+          document.getElementById("myCanvas").style.borderColor.red;
+     }
 
      if(keyPressed == '37'){
           car1Left();
@@ -93,3 +104,71 @@ function my_keydown(e){
 
 
 }
+
+ function car1Left(){
+     car1_x = car1_x - 10;
+     console.log("car1 x = "+car1_x+"car1 y ="+car1_y);
+     uploadBackground();
+     uploadCar1();
+     uploadCar2();
+ }
+
+ function car1UP(){
+     car1_y = car1_y - 10;
+     console.log("car1 x = "+car1_x+"car1 y ="+car1_y);
+     uploadBackground();
+     uploadCar1();
+     uploadCar2();
+ }
+
+ function car1Right(){
+     car1_x = car1_x + 10;
+     console.log("car1 x = "+car1_x+"car1 y ="+car1_y);
+     uploadBackground();
+     uploadCar1();
+     uploadCar2();
+ }
+
+ function car1Down(){
+     car1_y = car1_y + 10;
+     console.log("car1 x = "+car1_x+"car1 y ="+car1_y);
+     uploadBackground();
+     uploadCar1();
+     uploadCar2();
+ }
+
+ //Begin defining car 2 commands
+
+ function car2Left(){
+     car2_x = car2_x - 10;
+     console.log("car2 x = "+car2_x+"car2 y ="+car2_y);
+     uploadBackground();
+     uploadCar1();
+     uploadCar2();
+ }
+
+ function car2UP(){
+     car2_y = car2_y - 10;
+     console.log("car2 x = "+car2_x+"car2 y ="+car2_y);
+     uploadBackground();
+     uploadCar1();
+     uploadCar2();
+ }
+
+ function car2Right(){
+     car2_x = car2_x + 10;
+     console.log("car2 x = "+car2_x+"car2 y ="+car2_y);
+     uploadBackground();
+     uploadCar1();
+     uploadCar2();
+ }
+
+ function car2Down(){
+     car2_y = car2_y + 10;
+     console.log("car2 x = "+car2_x+"car2 y ="+car2_y);
+     uploadBackground();
+     uploadCar1();
+     uploadCar2();
+ }
+
+ 
